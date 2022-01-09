@@ -14,3 +14,7 @@ CVC files are used for the data
 ### Credits
 
 All credits to this repository Udacity repository.
+
+## Technology
+
+Python
