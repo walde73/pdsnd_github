@@ -140,7 +140,7 @@ def user_stats(df):
 
 
 def display_data(df):
-    view_data = input("\n Would you like to view 5 rows of individual trip data? Enter yes or no \n")
+    view_data = input("\n Would you like to view five rows of individual trip data? Enter yes or no \n")
     start_loc = 0
     while (view_data.lower() == 'yes'):
         print(df.iloc[0:start_loc+5])
