@@ -10,7 +10,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
-
+    str means strings
     Returns:
         (str) city - name of the city to analyze
         (str) month - name of the month to filter by, or "all" to apply no month filter
@@ -65,12 +65,13 @@ def time_stats(df):
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
+     # display the most common day of week
+    print(f"The most common day of week is {df['day'].value_counts().index[0]}")
 
     # display the most common month
     print(f"The most common month is {df['month'].value_counts().index[0]}")
 
-    # display the most common day of week
-    print(f"The most common day of week is {df['day'].value_counts().index[0]}")
+   
 
     # display the most common start hour
     df['hour'] = df['Start Time'].dt.hour
@@ -85,11 +86,13 @@ def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
-    # display most commonly used start station
-    print(f"The most common used start station is {df['Start Station'].value_counts().index[0]}.")
-
+   
     # display most commonly used end station
     print(f"The most common used end station is {df['End Station'].value_counts().index[0]}.")
+
+     # display most commonly used start station
+    print(f"The most common used start station is {df['Start Station'].value_counts().index[0]}.")
+
 
     # display most frequent combination of start station and end station trip
     df['Start_End_Station'] = df['Start Station']+" "+ df['End Station']
